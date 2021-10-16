@@ -7,6 +7,8 @@ class Post < ActiveRecord::Base
   accepts_nested_attributes_for :tags, reject_if: proc {|attributes| attributes['name'].blank?}
   validates_presence_of :name, :content
 
+  #WHY THE FOLLOWING WOULDN'T WORK IN REAL WORLD OR IT'S JUST BECAUSE OF THE TEST CONDITIONS?
+
   # def tags_attributes=(tags_attributes)
   #   tags_attributes.values.each do |tags_attribute|
   #     if !tags_attribute[:name].blank?
